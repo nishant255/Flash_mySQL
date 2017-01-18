@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <title>Edit Friend</title>
+
+    </head>
+    <body>
+        <h1>Edit Friend</h1>
+
+        <form class="col s12" action="/friends/{{ friend['id'] }}" method="post">
+            <!-- <div class="row">
+                <div class="input-field col s12">
+                    <input disabled value="{{ id }}" id="disabled" name = "friend_id" type="text" class="validate">
+                    <label for="disabled" class="active">Friend ID</label>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="first_name" type="text" name="first_name" class="validate" value="{{friend['first_name']}}">
+                    <label class="active" for="first_name"> New First Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="last_name" type="text" name="last_name" class="validate" value="{{friend['last_name']}}">
+                    <label class="active" for="first_name"> New Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="occupation" type="text" name="occupation" class="validate" value="{{friend['occupation']}}">
+                    <label class="active" for="first_name"> New Occupation</label>
+                </div>
+            </div>
+            <input class="btn waves-effect waves-light" type="submit" value="Update">
+            <a class="waves-effect waves-light btn" href="/">Cancel</a>
+
+        </form>
+    </body>
+</html>

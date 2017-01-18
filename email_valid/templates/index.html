@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style media="screen">
+          * {
+              text-align: center;
+          }
+      </style>
+    </head>
+
+    <body>
+        <div class="row">
+            <h1>Email Validation</h1>
+            <form class="col s12" action="/email_submit" method="post">
+                <div class="row">
+                    <label for="email">Email</label>
+                    <div class="input-field col s12">
+                        <input id="email" type="text" name="email" class="validate">
+                        <a class="waves-effect waves-light btn" type="submit">Submit</a>
+                    </div>
+                </div>
+            </form>
+            {{ message }}
+            <div style="display: {{ dis_type }}">
+                <p>Email Address Entered</p>
+                {% for email in emails: %}
+                <p>{{ email['id'] }}. {{ email['email'] }}</p>
+                {% endfor %}
+            </div>
+            <a class="waves-effect waves-light btn" href="/truncate" style="display: {{ dis_type2 }}">Delete All Emails</a>
+        </div>
+    </body>
+  </html>
